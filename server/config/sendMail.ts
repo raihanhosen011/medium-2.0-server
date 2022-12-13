@@ -1,12 +1,14 @@
 const nodemailer = require("nodemailer");
 import { OAuth2Client } from "google-auth-library";
 
+
 const OAUTH_PLAYGROUND = `${process.env.MAIL_REDIRECT_URL}`;
 
 const CLIENT_ID = `${process.env.MAIL_CLIENT_ID}`;
 const CLIENT_SECRET = `${process.env.MAIL_CLIENT_SECRET}`;
 const REFRESH_TOKEN = `${process.env.MAIL_REFRESH_TOKEN}`;
 const SENDER_MAIL = `${process.env.MAIL_CLIENT}`;
+
 
 // send mail
 export default async (to: string, url: string, txt: string, type?: string, code?: string) => {
@@ -61,8 +63,6 @@ export default async (to: string, url: string, txt: string, type?: string, code?
     console.log(err);
   }
 };
-
-
 
 
 

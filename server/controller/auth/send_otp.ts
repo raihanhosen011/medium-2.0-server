@@ -17,9 +17,9 @@ export default async (req: Request, res: Response) => {
        data.email = !isEmpty(data.email) ? data.email : "";
 
        if(Validator.isEmpty(data.email)){
-          return res.status(400).json({ success: false, msg: "Please add your email." })
+         return res.status(400).json({ success: false, msg: "Please add your email." })
        }else if(!Validator.isEmail(data.email)){
-          return res.status(400).json({ success: false, msg: "Email format is incorrect." })
+         return res.status(400).json({ success: false, msg: "Email format is incorrect." })
        }
 
        // send OTP

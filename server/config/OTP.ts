@@ -5,7 +5,6 @@ import bcrypt from 'bcrypt';
 // internal imports
 import sendMail from "./sendMail";
 import OTP_MODEL from "../models/otp";
-import { isAsyncFunction } from "util/types";
 
 
 // By using "OTP" function i will genarate OTP, send OTP to mail and save this OTP to Database
@@ -31,6 +30,7 @@ export const OTP = async (mail: string) => {
     }
 
 }
+
 
 // By using "verifyOtp" function i will find otp with provided "otp_id"
 export const verifyOtp = async (otp_id: string, otp: string) => {
