@@ -23,7 +23,7 @@ export default async (req: Request, res: Response) => {
        }
 
        // send OTP
-       const otp_id = OTP(data.email)
+       const otp_id = await OTP(data.email)
        
        res.status(202).json({ success : true, msg : "Please check your email", otp_id })
 
