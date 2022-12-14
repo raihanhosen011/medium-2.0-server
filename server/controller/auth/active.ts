@@ -21,6 +21,6 @@ export default async (req: Request, res: Response) => {
       res.status(200).json({ success : true, msg : "Account successfully activate!" })  
 
     } catch (e) {
-       return res.status(500).json({ msg : (e as Error).message, success : false }) 
+       return res.status(500).json({ msg : "Please do registation again", success : false }) 
     }
 }
