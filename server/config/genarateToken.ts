@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 
 // let's genarate active token
 export const generateActiveToken = (payload: object) => {
-  return jwt.sign(payload, `${process.env.ACTIVE_TOKEN_SECRET}`, {expiresIn: '1hr'})
+  return jwt.sign(payload, `${process.env.ACTIVE_TOKEN_SECRET}`, {expiresIn: '30m'})
 }
 
 // let's genarate access token
