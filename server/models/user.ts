@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Please add your password"],
-    trim: true
+    trim: true,
+    minLength : [6, "Password mush minium 6 cherecter"]
   },
 
   avatar: {
@@ -36,7 +37,9 @@ const userSchema = new mongoose.Schema({
   type: {
     type: String,
     default: 'normal' // fast
-  }
+  },
+
+  rf_token: { type: String, select: false }
 }, {
   timestamps: true
 })
