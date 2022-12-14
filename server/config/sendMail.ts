@@ -44,7 +44,7 @@ export default async (to: string, url: string, txt: string, type?: string, code?
     const mailOptions = {
       from: SENDER_MAIL,
       to: to,
-      subject: "Medium mail varification",
+      subject: "Medium 2.0 mail varification",
       html: type == 'send_code' ? otpTemplate(code) : linkTemplate(url),
     };
 
