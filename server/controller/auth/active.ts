@@ -1,7 +1,7 @@
 // external imports
 import { Request, Response } from "express";
 
-// do login
+// do active account
 export default async (req: Request, res: Response) => {
     try {
         
