@@ -10,7 +10,7 @@ import { OTP, verifyOtp } from "../../config/OTP";
 
 const CLIENT_URL = process.env.CLIENT_URL
 
-// do register
+
 export default async (req: Request, res: Response) => {
     try {
         // extract all data from "request body"

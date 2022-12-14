@@ -1,6 +1,10 @@
 // external import
 import mongoose from 'mongoose'
 
+// internal imports
+import { IUser } from '../config/interface'
+
+
 // user schema
 const userSchema = new mongoose.Schema({
   name: {
@@ -44,5 +48,6 @@ const userSchema = new mongoose.Schema({
   timestamps: true
 })
 
+
 // user model
-export default mongoose.model('User', userSchema)
+export default mongoose.model<IUser>('User', userSchema)

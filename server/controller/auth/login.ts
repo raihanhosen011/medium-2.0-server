@@ -8,7 +8,6 @@ import { generateAccessToken, generateRefreshToken } from "../../config/genarate
 import User from "../../models/user";
 
 
-// do login
 export default async (req: Request, res: Response) => {
     try {
        const { account, password } = req.body 

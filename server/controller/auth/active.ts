@@ -7,7 +7,6 @@ import { IToken } from "../../config/interface";
 import user from "../../models/user";
 
 
-// do active account
 export default async (req: Request, res: Response) => {
     try {
       const { active_token } = req.body

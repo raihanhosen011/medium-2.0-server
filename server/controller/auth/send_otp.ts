@@ -9,7 +9,6 @@ import { OTP } from "../../config/OTP";
 import user from "../../models/user";
 
 
-// send otp
 export default async (req: Request, res: Response) => {
     try {
        const data = req.body

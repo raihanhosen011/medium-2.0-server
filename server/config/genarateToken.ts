@@ -18,7 +18,7 @@ export const generateRefreshToken = (payload: object, res: Response) => {
 
   res.cookie('refreshtoken', refresh_token, {
     httpOnly: true,
-    path: `/api/refresh_token`,
+    path: `${process.env.BASE_URL}/api/refresh_token`,
     maxAge: 30*24*60*60*1000 // 30days
   })
 
