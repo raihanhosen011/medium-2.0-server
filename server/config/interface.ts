@@ -19,8 +19,9 @@ export interface INewUser {
     password : string
 }
 
-export interface IToken extends INewUser {
-    new_user : INewUser
+export interface IDecoded extends INewUser {
+    id ?: string
+    new_user ?: INewUser
     iat: number
     exp: number
 }

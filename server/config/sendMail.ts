@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer");
 import { OAuth2Client } from "google-auth-library";
+//
+import { linkTemplate } from "../utils/emailTemplate";
 
 
 const OAUTH_PLAYGROUND = `${process.env.MAIL_REDIRECT_URL}`;
@@ -38,11 +40,6 @@ export default async (to: string, url: string, txt: string, type?: string, code?
       },
     });
 
-    // mail template
-    const byLink = `
-      <span>${url}</span>
-    `
-
     const byNumber = `
       <span>${code}</span>
     `
@@ -52,7 +49,7 @@ export default async (to: string, url: string, txt: string, type?: string, code?
       from: SENDER_MAIL,
       to: to,
       subject: "Medium mail varification",
-      html: type == 'send_code' ? byNumber : byLink,
+      html: type == 'send_code' ? byNumber : linkTemplate(url),
     };
 
     // finaly get and return the result

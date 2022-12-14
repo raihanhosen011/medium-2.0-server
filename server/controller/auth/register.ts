@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt'
 import Users from '../../models/user'
 import { generateActiveToken } from "../../config/genarateToken";
 import sendMail from "../../config/sendMail";
-import { OTP, verifyOtp } from "../../config/OTP";
+import { verifyOtp } from "../../config/OTP";
 
 const CLIENT_URL = process.env.CLIENT_URL
 

@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import jwt from 'jsonwebtoken'
 
 // internal imports
-import { IToken } from "../../config/interface";
+import { IDecoded } from "../../config/interface";
 import user from "../../models/user";
 
 
@@ -12,7 +12,7 @@ export default async (req: Request, res: Response) => {
       const { active_token } = req.body
       
       // verify active token -
-      const { new_user } = <IToken>await jwt.verify(active_token, `${process.env.ACTIVE_TOKEN_SECRET}`)
+      const { new_user } = <IDecoded>await jwt.verify(active_token, `${process.env.ACTIVE_TOKEN_SECRET}`)
       
       // save data from active token
       const registred = new user(new_user).save()
