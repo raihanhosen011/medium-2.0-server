@@ -18,13 +18,11 @@ export const OTP = async (mail: string) => {
        const code = Math.floor(Math.random()*90000) + 10000; 
 
        // send code to user mail
-       sendMail(mail, '', '', 'send_code', code.toString())
+       await sendMail(mail, '', '', 'send_code', code.toString())
 
        // save code to database
        const hashed_code = await bcrypt.hash(`${code}`, 12)
        const saved_otp = new OTP_MODEL({ code : hashed_code }).save()
-
-       console.log(saved_otp)
 
        return (await saved_otp)._id
     }
