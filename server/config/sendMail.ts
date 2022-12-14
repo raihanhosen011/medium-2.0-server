@@ -9,7 +9,6 @@ const CLIENT_SECRET = `${process.env.MAIL_CLIENT_SECRET}`;
 const REFRESH_TOKEN = `${process.env.MAIL_REFRESH_TOKEN}`;
 const SENDER_MAIL = `${process.env.MAIL_CLIENT}`;
 
-
 // send mail
 export default async (to: string, url: string, txt: string, type?: string, code?: string) => {
   // call google oAuth class  

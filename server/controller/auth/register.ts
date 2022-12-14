@@ -34,7 +34,7 @@ export default async (req: Request, res: Response) => {
                const url = `${CLIENT_URL}/active/${active_token}`
 
                // send mail to user with active token
-               sendMail(account, url, "check", 'send_mail', '')
+               await sendMail(account, url, "check", 'send_mail', '')
 
                res
                   .status(200)
