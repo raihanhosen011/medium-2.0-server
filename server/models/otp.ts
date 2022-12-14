@@ -1,6 +1,5 @@
 // external import
 import mongoose from 'mongoose'
-import ms from 'ms'
 
 // otp schema
 const otpSchema = new mongoose.Schema({
