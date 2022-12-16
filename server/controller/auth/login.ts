@@ -15,7 +15,7 @@ export default async (req: Request, res: Response) => {
        // check is account exist      
        const user = await User.findOne({ account })
        if(!user){
-          return res.status(500).json({ msg : "Account does not exist.", success : false }) 
+          return res.status(400).json({ msg : "Account does not exist.", success : false }) 
        } 
 
        // if user exist
