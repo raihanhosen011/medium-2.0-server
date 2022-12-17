@@ -20,8 +20,8 @@ const router = Router()
 // setup all router
 router.post('/register', registerValidation, register)
 router.post('/login', login)
-router.post('/active', active)
 
+router.get('/active/:id', active)
 router.get('/logout', logout)
 router.get('/refresh_token', refreshToken)
 router.get('/send-otp', send_otp)
